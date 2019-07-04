@@ -1,0 +1,20 @@
+{
+    "Org 0": {
+        "Adr": "123 Org Dr",
+        "City": "OrgVille",
+        "State": "Michigan",
+
+        "passion": "$passion",
+        "about":"$descrStr",
+        "img":"$imgName",
+
+        "link":"$orgUrl",
+        "social": {
+            "ig": "$uri",
+            "tw": "$uri",
+            "fb": "$url"
+        },
+
+        "name": "Org 0"
+    }
+}

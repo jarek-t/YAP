@@ -1,0 +1,48 @@
+{
+  "name": "the-you-are-power-project",
+  "version": "1.0.0",
+  "description": "Digitally engage in your democracy",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jarek-t/The-You-Are-PowerProject-Homepage.git"
+  },
+  "keywords": [
+    "Activism",
+    "Non-Profit"
+  ],
+  "author": "Jarek Troyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarek-t/The-You-Are-PowerProject-Homepage/issues"
+  },
+  "homepage": "https://github.com/jarek-t/The-You-Are-PowerProject-Homepage#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.6.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "sugarss": "^2.0.0",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-md5-hash": "0.0.6",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "postcss-loader": "^3.0.0"
+  }
+}
