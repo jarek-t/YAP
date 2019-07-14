@@ -1,10 +1,16 @@
 <!doctype html>
 <html>
- <head>
-   <title>Getting Started</title>
-   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
- </head>
-+    
+<head>
+    <meta charset="UTF-8">
+
+    <title>Getting Started</title>
+
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.5.1/leaflet.css" />
+
+    <script src="https://kit.fontawesome.com/a31625db37.js"></script>
+</head>
+
 <body>
   
   <div id="bg"><div></div></div>
@@ -137,61 +143,62 @@
 
   <div id="pickYouPassionWrap">
       <nav id="pickYouPassionNav">
-          <a href="#">
+          <a class="pickYourPassionOpt" id="repJustic">
               <img src="assets/reproductiveJustice.svg">
 
               <button>Reproductive Justice</button>
           </a>
 
-          <a href="#">
+          <a class="pickYourPassionOpt" id="svil">
               <img src="assets/sexualviolence.svg">
 
               <button>Ending Sexual Violence</button>
           </a>
 
-          <a href="#">
+          <a class="pickYourPassionOpt" id="envProtection">
               <img src="assets/environmentalProtection.svg">
 
               <button>Environmental Protection</button>
           </a>
 
-          <a href="#">
+          <a class="pickYourPassionOpt" id="artsExpr">
               <img src="assets/artsAndCreativeExpression.svg">
 
               <button>Arts & Creative Expression</button>
           </a>
 
-          <a href="#">
+          <a class="pickYourPassionOpt" id="cjReform">
               <img src="assets/cjReform.svg">
 
               <button>Criminal Justice Reform</button>
           </a>
 
-          <a href="#">
+          <a class="pickYourPassionOpt" id="mhAwareness">
               <img src="assets/mentalHealthAwareness.svg">
 
               <button>Mental Health Awareness</button>
           </a>
 
-          <a href="#">
+          <a class="pickYourPassionOpt" id="immAccess">
               <img src="assets/immigrationAccess.svg">
-
+            `
               <button>Immigration Access</button>
           </a>
 
-          <a href="#">
+          <a class="pickYourPassionOpt" id="lgbtq">
               <img src="https://i2.wp.com/theyouarepowerproject.com/wp-content/uploads/2019/06/lgbtq.png?zoom=1.7000000476837158&w=1080&ssl=1">
 
               <button>Ending LGBTQ+ Discrimination</button>
           </a>
       </nav>
 
-      <div id="mapWrap"></div>
+      <div id="container"></div>
   </div>
+
 
   <div class="lowerContent" id="contactUsWrap">
       <div>
-          <div id="socialMediaLinkWrap">
+          <div id="socialMediaLinkWrap" >
               <ul>
                   <li>
                       <a>

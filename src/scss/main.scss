@@ -1,6 +1,7 @@
 @import "common/colors.scss";
 @import "common/utility.scss";
 @import "common/fonts.scss";
+@import "common/header.scss";
 
 //utility
 
@@ -88,7 +89,7 @@ main {
     height: 80vh;
     max-height: 100vh;
     color: white;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -498,6 +499,11 @@ main {
     
     }
 
+    #mapWrap {
+        width: 90%;
+        height: 40vh;
+        
+    }
 }
 
 
@@ -566,7 +572,6 @@ main {
         }
     }
 }
-
 
 
 
