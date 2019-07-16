@@ -1,27 +1,48 @@
 
 const getMap = require('../util/getMap.js')
+const getNavItems = require('../util/getNavItems')
+const passionTransition = require('../util/passionTransition')
+
+const mapNav = require('./mapNav')
 
 class mapCoordinator {
     constructor(args) {        
-        this.map = getMap(args['passionContainerId'])
-        
-        let initOpts = {}
-        // ^ debugging
+        let main = this
 
-        document.querySelectorAll(args['passionNavClass']).forEach(opt => {
-            initOpts[opt.id] = opt
-            let main = this
-            
-            opt.addEventListener('click', e => {
-                main.navigate(opt.id)
-            })
-        })
-        
-        console.log(initOpts)
+        this.map = {
+            'obj': getMap(args['passionContainerId']),
+            'nav': document.getElementById('mapNav'),
+            'container': document.getElementById('passionContainer')
+        }   
+
+        this.nav = {
+            'items': getNavItems(args['passionNavClass'], main),
+            'container': document.getElementById('pickYouPassionNav')
+        }
+
+        let mapNavOpts = {
+            'map': main,
+            'initialLocation': false,
+            'container': document.getElementById('mapNav')
+        }
+        this.mapNav = new mapNav(mapNavOpts)
+
+        this.toggle()
     }
 
-    navigate(which) {
-        console.log(which)
+    showMap(event) {  
+        this.toggle()
+
+        let whichPart = event.path[1].id        
+    }
+
+    toggle() {
+        let nav = this.nav.container
+        let map = this.map.container
+
+        passionTransition(nav, map)
+
+        return true
     }
 }
 

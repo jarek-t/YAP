@@ -1,0 +1,74 @@
+{
+    "repJustic": {
+        "name": "Reproductive Justice",
+
+        "orgs": [
+            {"name": "test1", "id": "_test1"},
+            {"name": "test2", "id": "_test2"},
+            {"name": "test3", "id": "_test3"}
+        ]
+    },
+    "svil": {
+        "name": "Ending Sexual Violence",
+
+        "orgs": [
+            {"name": "test1", "id": "_test1"},
+            {"name": "test2", "id": "_test2"},
+            {"name": "test3", "id": "_test3"}
+        ]
+    },
+    "envProtection": {
+        "name": "Environmental Protection",
+
+        "orgs": [
+            {"name": "test1", "id": "_test1"},
+            {"name": "test2", "id": "_test2"},
+            {"name": "test3", "id": "_test3"}
+        ]
+    },
+    "artsExpr": {
+        "name": "Arts & Creative Expression",
+
+        "orgs": [
+            {"name": "test1", "id": "_test1"},
+            {"name": "test2", "id": "_test2"},
+            {"name": "test3", "id": "_test3"}
+        ]
+    },
+    "cjReform": {
+        "name": "Criminal Justice Reform",
+
+        "orgs": [
+            {"name": "test1", "id": "_test1"},
+            {"name": "test2", "id": "_test2"},
+            {"name": "test3", "id": "_test3"}
+        ]
+    },
+    "mhAwareness": {
+        "name": "Mental Health Awareness",
+
+        "orgs": [
+            {"name": "test1", "id": "_test1"},
+            {"name": "test2", "id": "_test2"},
+            {"name": "test3", "id": "_test3"}
+        ]
+    },
+    "immAccess": {
+        "name": "Immigration Access",
+
+        "orgs": [
+            {"name": "test1", "id": "_test1"},
+            {"name": "test2", "id": "_test2"},
+            {"name": "test3", "id": "_test3"}
+        ]
+    },
+    "lgbtq": {
+        "name": "Ending LGBTQ+ Discrimination",
+
+        "orgs": [
+            {"name": "test1", "id": "_test1"},
+            {"name": "test2", "id": "_test2"},
+            {"name": "test3", "id": "_test3"}
+        ]
+    }
+}

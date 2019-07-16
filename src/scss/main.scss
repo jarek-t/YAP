@@ -440,14 +440,16 @@ main {
     
 
     nav {
-        width: 80%;
-        max-width: none;
+        box-sizing: border-box;
+
+        width: 100%;
         margin: auto;
+        padding: 0 10% 5rem 10%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
 
-        padding-bottom: 5rem;
+        // padding-bottom: 5rem;
         
        
     
@@ -501,13 +503,39 @@ main {
         }
     
     }
+    #passionContainer {
+        display: block;
+        position: relative;
 
-    #mapWrap {
         width: 100%;
-        height: 40vh;
-        
+        height: 75vh;
+
+        * {
+            position: absolute;
+            top: 0;
+            height: 100%;
+        }
+        #mapNav {
+            z-index: 1000;
+            left: 0;
+
+            width: 40%;
+            height: 100%;
+
+            background-color: red;
+        }
+        #mapWrap {
+            width: 100%; 
+            
+            
+        }
+
+        .leaflet-control-container 
+            { display: none; }
     }
 }
+
+
 
 
 #contactUsWrap {
