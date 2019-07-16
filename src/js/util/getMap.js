@@ -1,16 +1,8 @@
 const L = require('leaflet')
 
-module.exports = (container, baseName) => {
-    container.id = baseName + "container"
-
-    let mapWrap = document.createElement('div')
-    let mapWrapName = baseName + "Map"
-    mapWrap.id = mapWrapName
-
-    container.appendChild(mapWrap)
-
+module.exports = containerName => {
     let map = L.map(
-        mapWrapName, {
+        containerName, {
         center: [42.74,-84.49],
         zoom: 5
         // minZoom: ,

@@ -1,9 +1,16 @@
 import './scss/main.scss'
 
-const headerClass = require('./js/header')
-const mapCoordinator = require('./js/map')
+const getHeader = require('./js/util/getHeader')
+const map = require('./js/classes/map')
 
-var headerObj = headerClass.default
-var passionMap = new mapCoordinator("passion")
+let args = {
+    'passionContainerId': 'mapWrap',
+    'passionNavClass': '.pickYourPassionOpt'
+}
+
+var passionMap = new map(args)
+var headerObj = getHeader.default
+
+console.log(passionMap)
 console.log(headerObj)
 

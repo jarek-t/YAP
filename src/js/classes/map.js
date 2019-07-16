@@ -1,22 +1,22 @@
 
-const getMap = require('./util/getMap.js')
+const getMap = require('../util/getMap.js')
 
 class mapCoordinator {
-    constructor(baseName) {
-        let _container = document.createElement('div')
-        
-        this.map = getMap(container, baseName)
-        this.container = _container
+    constructor(args) {        
+        this.map = getMap(args['passionContainerId'])
         
         let initOpts = {}
-        document.querySelectorAll('.pickYourPassionOpt').forEach(opt => {
+        // ^ debugging
+
+        document.querySelectorAll(args['passionNavClass']).forEach(opt => {
             initOpts[opt.id] = opt
-            
             let main = this
+            
             opt.addEventListener('click', e => {
                 main.navigate(opt.id)
             })
         })
+        
         console.log(initOpts)
     }
 
