@@ -5,7 +5,7 @@ module.exports = (nav, map) => {
     }
 
     if ((nav.style.display != "none" && map.style.display != "none") || map.style.display != "none") 
-        { swap(map, nav) }
+    { swap(map, nav) }   //{ swap(nav, map) }
 
-    else { swap(nav, map) }   
+    else { swap(nav, map) }//   { swap(map, nav) }
 }

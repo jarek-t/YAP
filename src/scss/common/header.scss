@@ -16,13 +16,9 @@
     box-shadow: 0 0 .15rem 0rem #0E0E0E;
 
     ul {
-        @extend .default;
-        
         max-width: 800px;
         box-sizing: border-box;
-        margin: auto;
-        padding-right: 3rem;
-        padding-left: 3rem;
+        margin: 0 auto 0 auto;
 
         display: flex;
         justify-content: space-around;
@@ -34,6 +30,7 @@
         }
 
         li {
+            @extend .default;
             a {
                 text-decoration: none;
                 color: black;

@@ -10,5 +10,6 @@ module.exports = (title, main) => {
     header.innerHTML = title ? title : 'Pick Your Passion'
     wrap.appendChild(header)
 
+    wrap.id="mapMetaNavWrap"
     return wrap
 }

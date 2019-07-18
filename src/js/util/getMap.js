@@ -3,15 +3,16 @@ const L = require('leaflet')
 module.exports = containerName => {
     let map = L.map(
         containerName, {
-        center: [42.74,-84.49],
-        zoom: 5
+        center: [43.761,-89.956],
+        zoom: 7
         // minZoom: ,
         // maxZoom: ,
     })
     
-    L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png', {
+	    attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+	    minZoom: 1,
+	    maxZoom: 19
     }).addTo(map)
 
     return map

@@ -4,7 +4,7 @@ module.exports = (initType, navItems) => {
     navItems = navItems ? navItems : mapNavItems
 
     let makePassion = (passion, pId) => {
-        let passionWrap = document.createElement('ul')
+        let passionWrap = document.createElement('div')
         let passionHead = document.createElement('div')
 
         let temp = document.createElement('h2')
@@ -13,11 +13,11 @@ module.exports = (initType, navItems) => {
         passionHead.appendChild(temp)
         passionWrap.append(passionHead)
 
-        let passionItems = document.createElement('ul')
+        let passionItems = document.createElement('nav')
         passion.orgs.forEach(org => {
-            temp = document.createElement('li')
+            temp = document.createElement('div')
 
-            let title = document.createElement('h3')
+            let title = document.createElement('p')
             title.innerHTML = org['name']
             title.id = org['id']
 
@@ -36,10 +36,14 @@ module.exports = (initType, navItems) => {
         return passionWrap
     }
 
-    let passionList = document.createElement('ul')
+    let passionList = document.createElement('nav')
+    passionList.id = "mapNavList"
     Object.keys(navItems).forEach(pId => {
         passionList.appendChild(makePassion(navItems[pId]))
     })
 
-    return passionList
+    let wrap = document.createElement('div')
+    wrap.appendChild(passionList)
+    wrap.id="mapNavListWrap"
+    return wrap
 }

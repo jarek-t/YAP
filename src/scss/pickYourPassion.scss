@@ -1,0 +1,219 @@
+// html, body, #viewDiv {
+//     padding: 0;
+//     margin: 0;
+//     height: 100vh;
+//     width: 100%;
+// }
+@import "common/colors.scss";
+@import "common/utility.scss";
+
+.esri-ui { display: none !important;}
+
+body {
+    @extend .default;
+}
+
+#pickYouPassionWrap {
+    background-color: white;
+
+    #pickYourPassionNav {
+        box-sizing: border-box;
+
+        width: 100%;
+        margin: auto;
+        padding: 0 10% 5rem 10%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        a {
+            margin: 5% 2.5% 0 2.5%;
+            width: 20%;
+            height: 11.5rem;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-decoration: none;
+            cursor: pointer;
+
+            :hover {
+                button {
+                    background-color: $primPink;
+                }
+            }
+    
+            img {
+
+                // height: 7rem;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+                max-height: 7rem;
+            }
+            
+            
+            button {
+                font-size: 1rem; 
+                text-transform: none;
+                min-height: 3.5rem;
+                
+            }
+        }
+        
+        a:hover {
+            button {
+                background-color: $primPink;
+                color: #1E1E1E;
+            }
+
+            margin: 5% .5% 0 .5%;
+            width: 24%;
+            height: 12rem;
+            img {
+                max-width: 125%;
+                max-height: 8rem;
+            }
+        }
+    
+    }
+    #passionContainer {
+        display: block;
+        position: relative;
+
+        width: 100%;
+        height: 75vh;
+
+        * {
+            position: absolute;
+        }
+        #mapNav {
+            z-index: 1000;
+            left: 0;
+
+            background-color: white;//$offWhiteBackground; //rgba(239, 239, 239, .85);
+            box-shadow: 0 0 .1rem .1rem rgba(0,0,0,.4);
+
+            width: 40%;
+            height: 95%;
+
+            top: 2.5%;
+
+            display: flex;
+            flex-wrap: wrap;
+            * { 
+                position: relative;
+                display: flex;
+                
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            #mapMetaNavWrap {
+                height: 15%;
+                flex-direction: row;
+
+                i {
+                    cursor: pointer;
+                }
+            }
+            #mapNavListWrap {
+                height: 85%;
+
+                #mapNavList {
+                    @extend .default;
+                    height: auto;
+                    
+                    flex-direction: column;
+                    overflow: auto;
+                    
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        div {
+                            display: block;
+                            text-align: center;
+
+                            h2 {
+                                @extend .mainCapsFont;
+                                display: block;
+
+                                text-transform: uppercase;
+                                text-align: center;
+                            }
+                        }
+                        nav {
+                            width: 100%;
+    
+                            display: flex;
+                            flex-direction: column;
+                            box-sizing: border-box;
+
+                            div {
+                                margin: 1.5rem 0 1.5rem 0;
+
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                
+                                *{
+                                    @extend .mainFont;
+                                    font-size: 1.25rem;
+
+                                    display: flex;
+                                    width: auto;
+                                    margin: 0 1.5rem 0 1.5rem;
+                                }
+                                h3 {
+                                    
+                                }
+                             
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+        #mapWrap {
+            width: 100%; 
+            height: 100%;
+            
+        }
+
+        .leaflet-control-container 
+            { display: none; }
+    }
+
+
+    .border {
+        width: 100%;
+        height: 2.5% !important;
+        background-color: white;
+        z-index: 1001;
+
+        position: absolute;
+        left: 0;
+    }
+
+    #topPassionBorder { top: 0; left: 0;}
+    #bottomPassionBorder { top: 97.5%; left: 0;}
+
+
+}
+
+// #contentWrap {
+//     width: 40%;
+//     height: 100%;
+//     overflow-y: hidden;
+//     // margin-top: $headerHeight - .3rem;
+//     box-sizing: border-box;
+    
+//     position: absolute;
+//     top: 0;
+
+    
+// }

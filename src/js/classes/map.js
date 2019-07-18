@@ -17,7 +17,7 @@ class mapCoordinator {
 
         this.nav = {
             'items': getNavItems(args['passionNavClass'], main),
-            'container': document.getElementById('pickYouPassionNav')
+            'container': document.getElementById('pickYourPassionNav')
         }
 
         let mapNavOpts = {
