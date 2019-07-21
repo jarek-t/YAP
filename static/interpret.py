@@ -1,4 +1,4 @@
-import os, sys, re, csv
+import os, sys, re, csv, json
 
 class YapDataReadier:
     orgIndex = {
@@ -11,6 +11,7 @@ class YapDataReadier:
         "Immigration Access": "immAccess",
         "Ending LGBTQ+ Discrimination": "lgbtq"
     }
+    keyIndex = {}
 
     orgs = {
         "repJustic": {},
@@ -22,6 +23,8 @@ class YapDataReadier:
         "immAccess": {},
         "lgbtq": {}
     }
+
+    passionIndex = {}
 
     def splitAddress(self, address, out):
         addrList = re.split(r"(\,|-)", address)
@@ -57,15 +60,56 @@ class YapDataReadier:
             
             targetIndex[row[3]] = attrs
 
+    def makeKeyIndex(self, orgIndex = False):
+        orgIndex = orgIndex if orgIndex else self.orgIndex
 
+        for key in orgIndex:
+            self.keyIndex[orgIndex[key]] = key
+
+    def makeOrgIndex(self):
+        for cat in self.orgs:
+            info = { "id": cat, "name": self.keyIndex[cat], "orgs": []}
+            orgList = info["orgs"]
+
+            for org in self.orgs[cat]:
+                orgInfo = (self.orgs[cat])[org]
+
+                if orgInfo: 
+                    orgList.append( { "name": orgInfo['name'], "id": orgInfo['phone'] } )
+
+            if not len(orgList):
+                orgList.append({"name": "test", "id": "_test"})
+
+            self.passionIndex[info["id"]] = info
+    def finish(self):
+        fn = './passions.json'
+        with open(fn, 'w') as passionsOut:
+            json.dump(self.orgs, passionsOut)
+        print('Passions exported to ' + fn + '\n')
+
+        with open('./index.json', 'w') as indexOut:
+            json.dump(self.passionIndex, indexOut)
+        print('Index exported to ' + fn + '\n')
+
+        print('...Done!')
 
     def __init__(self, csvPath):
+        self.makeKeyIndex()
+
+        print('Parsing ' + csvPath + '...' + '\n')
         with open(csvPath, 'r') as yapFile:
             yapImporter = csv.reader(yapFile)
             
             self.parseSource(yapImporter)
 
-        print(self.orgs)
+        self.makeOrgIndex()
+
+        self.finish()
+
+        
+        
+        
+
 
 
         
