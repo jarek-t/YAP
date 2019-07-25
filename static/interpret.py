@@ -83,6 +83,7 @@ class YapDataReadier:
             self.passionIndex[info["id"]] = info
     def finish(self):
         fn = './passions.json'
+
         with open(fn, 'w') as passionsOut:
             json.dump(self.orgs, passionsOut)
         print('Passions exported to ' + fn + '\n')

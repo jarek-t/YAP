@@ -30,10 +30,10 @@ class mapCoordinator {
         this.toggle()
     }
 
-    showMap(event) {  
+    showMap(id) {  
         this.toggle()
-
-        let whichPart = event.path[1].id        
+        
+        this.mapNav.makeActive(id)
     }
 
     toggle() {

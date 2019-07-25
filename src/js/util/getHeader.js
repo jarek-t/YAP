@@ -1,4 +1,3 @@
-
 let createHeader = (navHTML, linkHTML, insert) => {   
     
     let ifReplace = (ifNot=false, withThis='') => { 
