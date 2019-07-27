@@ -5,86 +5,67 @@ const mapNavItems = require('../data/navInfo.json')
 class mapNav {
     constructor(args) {
         let main = this
+
         this.map = args['map']
         this.mapNavContainer = args['container']
+        this.navOpts = mapNavItems
+        
+        let type = args['initialType']
 
-        let type = args['initialType'] // for testing
+        let metaNav = getMapMetaNav(type, main)
+        this.mapMetaNavItems = metaNav.items
 
-        let navItems = mapNavItems
-        this.navOpts = navItems
-        this.mapMetaNav = getMapMetaNav(type, main)
-        this.mapNav = getMapNav(navItems, main, type)
+        let mapNav = getMapNav(main.navOpts, main, type)
+        this.mapNavItems = mapNav.items
 
-        this.mapNavContainer.appendChild(this.mapMetaNav)
-        this.mapNavContainer.appendChild(this.mapNav)
+        this.mapNavContainer.appendChild(metaNav.wrap)
+        this.mapNavContainer.appendChild(mapNav.wrap)
 
         this.currentlySelected = false
-        this.activePassionWindow = this.mapMetaNav.lastChild
-
         
         this.defautlHeader = 'Pick Your Passion'
         this.headerObj = document.getElementById('mapNavHeader')
 
-        if (type) { this.makeActive(type) }
+        if (type) this.makeActive(type) 
     }
 
     back() {
-        this.map.toggle()
+        let deselect = this.deselect()   
+
+        if (deselect) this.mapMetaNavItems.head.innerHTML = 'Pick Your Passion'
+            
         
-        this.deselectAll()   
+        else this.map.toggle()
+        
     }
 
-    makeActive(passionTypeId) {
-        this.deselectAll()
+    makeActive(pId) {
+        this.deselect()
 
-        if (this.currentlySelected) this.mapNav.appendChild(this.currentlySelected)
+        this.currentlySelected = this.mapNavItems[pId]
+        
+        this.mapMetaNavItems.active.appendChild(this.currentlySelected.orgs)
 
-        let targetItemId = passionTypeId + "Wrap"        
+        this.mapMetaNavItems.head.innerHTML = this.currentlySelected.name
         
-        this.currentlySelected = document.getElementById(targetItemId)
-        console.log(this.currentlySelected)
-        this.headerObj = this.currentlySelected.firstChild.firstChild.innerHTML
-        this.activePassionWindow.innerHTML = ''
-        this.activePassionWindow.appendChild(this.currentlySelected.lastChild)
-        
+        this.currentlySelected.head.classList.add('selected')
     }   
 
-    readNavOpts(source) {
-        Object.keys(source).forEach(pId => {
-            passionList.appendChild(makePassion(navItems[pId]))
-        })
-    }  
+    deselect () {
+        if (this.currentlySelected) {
+            this.currentlySelected.head.classList.remove('selected')
 
-    
-    // moveToFront(passionWrap) {
-    //     this.activePassionWindow.innerHTML = ''
-    //     this.activePassionWindow.appendChild(this.currentlySelected)
-    // }
+            let active = this.mapMetaNavItems.active
 
-    deselectAll() {
-        this.currentlySelected = false
+            active.childNodes.forEach
+                ( curActive => active.removeChild(curActive) )
+            
+            this.currentlySelected = false
+            return true
+        }
 
-        this.mapNav.firstChild.childNodes
-                .forEach(p => { p.className = '' })
+        return false
     }
-
-    moveToWindow(passionWrap) {
-
-    }
-
-    get _navList() 
-        { return this.mapNav.firstChild.childNodes }
-
-    set _navList(newNavItems) {
-        let target = this.mapNav.firstChild
-        
-        target.innerHTML = ''
-        
-        newNavItems.forEach( opt => 
-            target.appendChild(opt)
-        ) 
-    }
-
 }
 
 module.exports = mapNav

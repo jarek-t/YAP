@@ -7,6 +7,7 @@
     box-shadow: 0 0 .1rem .1rem rgba(0,0,0,.4);
 
     width: 40%;
+    max-width: 400px;
     height: 95%;
 
     top: 2.5%;
@@ -29,66 +30,89 @@
         text-transform: uppercase;  
     }
     #mapMetaNavWrap {
-        width: 100%;
-        
         box-shadow: 0 .75rem .5rem -.5rem rgba($color: $primPink, $alpha: 0.25);
-        padding: 0 auto 0 auto;
-        
-        * {
-            margin: auto auto auto auto;
-            height: auto;
-            vertical-align: middle;
 
-            display: inline-block;
-        }
-        h1 {
-           width: 90%;
-            text-align: center;
-        }
-        i {
-            width: 10%;
-            cursor: pointer;
-        }
-
-        ul {
-            width: 100%;
-            padding-inline-start: 0;
-            flex-direction: column;
-            box-sizing: border-box;
-            
-            list-style: none;
+        #mapNavHeader {
             display: flex;
-            
-            overflow-y: auto;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: left;
 
-            min-height: 5rem;
-            max-height: 15rem;
-    
-            div {
-                margin: 1.5rem 0 1.5rem 0;
-                background: none;
+            * { box-sizing: border-box; }
+
+            #backWrap {
+                width: 8%;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
-    
-                border: none;
-                
-                *{
-                    @extend .mainFont;
-                    font-size: 1.25rem;
-    
-                    display: flex;
+                justify-content: center;
+
+                i {
+                    margin: auto 0 auto 0;    
                     width: auto;
-                    margin: 0 1.5rem 0 1.5rem;
-                }
-    
-                
-                h3 {
                     
+                    cursor: pointer;
+        
+                    ::before {
+                        width: auto;
+                        margin: 0 auto 0 auto;
+                    }
                 }
-             
+            }
+            
+            h1 {
+                font-size: 1.65rem;
+                max-width: 90%;
+                text-align: center;
+            }
+
+            padding-bottom: 1.5rem;
+        }
+
+        #activePassionWindow {
+            ul {
+                width: 100%;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                padding-inline-start: 0;
+                flex-direction: column;
+                box-sizing: border-box;
+                
+                list-style: none;
+                display: flex;
+                
+                overflow-y: auto;
+    
+                min-height: 5rem;
+                max-height: 15rem;
+        
+                div {
+                    margin-bottom: 1.5rem;
+                    background: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+        
+                    border: none;
+                    
+                    *{
+                        @extend .mainFont;
+                        font-size: 1.25rem;
+        
+                        display: flex;
+                        width: auto;
+                        margin: 0 1.5rem 0 1.5rem;
+                    }
+        
+                    
+                    h3 {
+                        
+                    }
+                 
+                }
             }
         }
+
+        width: 100%;
     }
     #mapNavListWrap {
         display: block;
@@ -104,46 +128,35 @@
             
             max-height: 100%;
             overflow-y: auto;
+                         
             div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                display: block;
+                text-align: center;
+
+                background-color: black;
+                border-top: solid .25rem $primPink;
+
+                cursor: pointer;
+
+                h2 {
+                    width: auto;
+                    display: inline-block;
+                    margin: 0 auto 0 auto;
+
+                    padding: .5rem .65rem .65rem .35rem;
+
+                    border-radius: 2.5rem;
+                    background-color: black;
+                    color: white;
+
+
+                }
 
                 
-              
-               
-
-                div {
-                    display: block;
-                    text-align: center;
-
-                    background-color: black;
-                    border-top: solid .25rem $primPink;
-
-                    cursor: pointer;
-
-                    h2 {
-                        width: auto;
-                        display: inline-block;
-                        margin: 0 auto 0 auto;
-
-                        padding: .5rem .65rem .65rem .35rem;
-
-                        border-radius: 2.5rem;
-                        background-color: black;
-                        color: white;
-
-
-                    }
-
-                  
-                }
             }
         }
     }
 }
-.active {
-    // ul {
-    //     display: flex !important;
-    // }
+.selected {
+    display: none !important;
 }

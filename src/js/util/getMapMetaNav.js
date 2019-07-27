@@ -1,25 +1,37 @@
 module.exports = (title, main) => {
+    let metaNavOut = { 'back': false, 'head': false, 'active': false }
+
     let container = document.createElement('div')
-
-    let wrap = document.createElement('div')
-    let back = document.createElement('i')
-    back.className = 'fas fa-chevron-left'
-    back.addEventListener('click', e => {main.back()})
-    wrap.appendChild(back)
-
-    let header = document.createElement('h1')
-    header.id = "mapNavHeader"
-    header.innerHTML = title ? title : 'Pick Your Passion'
-    wrap.appendChild(header)
-
-    container.appendChild(document.createElement('div'))
-    container.appendChild(wrap)
     container.id="mapMetaNavWrap"
 
+    let wrap = document.createElement('div')
+    wrap.id = "mapNavHeader"
+
+    let back = document.createElement('i')
+    back.className = 'fas fa-chevron-left fas-4x'
+
+    metaNavOut.back = back
+    back.addEventListener('click', e => {main.back()})
+
+    let backWrap = document.createElement('div')
+    backWrap.appendChild(back)
+    backWrap.id = "backWrap"
+    
+    wrap.appendChild(backWrap)
+
+    let head = document.createElement('h1')
+    head.innerHTML = title ? title : 'Pick Your Passion'
+    
+    metaNavOut.head = head
+    wrap.appendChild(head)
+
+    container.appendChild(wrap)
+    
     let activePassionWindow = document.createElement('div')
     activePassionWindow.id = "activePassionWindow"
-
+    
+    metaNavOut.active = activePassionWindow
     container.appendChild(activePassionWindow)
 
-    return container
+    return {'wrap': container, 'items': metaNavOut}
 }
