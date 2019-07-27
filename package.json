@@ -4,6 +4,7 @@
   "description": "Digitally engage in your democracy",
   "main": "index.js",
   "scripts": {
+    "srv": "webpack-dev-server",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
   },
@@ -30,6 +31,8 @@
     "cssnano": "^4.1.10",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "json-loader": "^0.5.7",
+    "less": "^3.9.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "postcss-import": "^12.0.1",
@@ -39,10 +42,13 @@
     "sugarss": "^2.0.0",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2",
     "webpack-md5-hash": "0.0.6",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "esri-leaflet": "^2.2.4",
+    "leaflet": "^1.5.1",
     "postcss-loader": "^3.0.0"
   }
 }

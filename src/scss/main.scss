@@ -1,6 +1,9 @@
 @import "common/colors.scss";
 @import "common/utility.scss";
 @import "common/fonts.scss";
+@import "common/header.scss";
+@import "./pickYourPassion.scss";
+@import "./mapNav.scss";
 
 //utility
 
@@ -88,7 +91,7 @@ main {
     height: 80vh;
     max-height: 100vh;
     color: white;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -329,8 +332,6 @@ main {
     article { background-color: rgba($color: $primPink, $alpha: 0.1);}
 }
 
-
-
 #readMoreAd { width: 11rem; }
 
 #directorsWrap {
@@ -395,111 +396,6 @@ main {
 
     article { display: none; }
 }
-
-
-//Pick Your Passion
-#pickYourPassion {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto 0 auto;
-    text-align: center;
-    margin-top: 15vh;
-
-
-    h1 {
-        @extend .mainFont;
-        font-size: 1.5rem;
-        font-weight: 600;
-
-        vertical-align: middle;
-        text-align: center;
-        margin: auto;
-
-        cursor: pointer;
-        user-select: none;
-        color: #1E1E1E;
-        width: auto;
-        
-        padding: 1.5rem;
-        border: .25rem solid $primPink;
-        border-radius: .25rem;
-    }
-    ul {
-        display: none;
-    }
-    // padding-bottom: 1rem;
-    @extend .parentWidth;
-}
-
-#pickYouPassionWrap {
-    background-color: white;
-    padding-bottom: 5rem;
-
-    nav {
-        width: 80%;
-        max-width: none;
-        margin: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        
-       
-    
-        a {
-            margin: 5% 2.5% 0 2.5%;
-            width: 20%;
-            height: 11.5rem;
-    
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-decoration: none;
-
-            :hover {
-                button {
-                    background-color: $primPink;
-                }
-            }
-    
-            img {
-
-                // height: 7rem;
-                max-width: 100%;
-                width: auto;
-                height: auto;
-                max-height: 7rem;
-            }
-            
-            
-            button {
-                font-size: 1rem; 
-                text-transform: none;
-                min-height: 3.5rem;
-                
-            }
-        }
-        
-        a:hover {
-            button {
-                background-color: $primPink;
-                color: #1E1E1E;
-            }
-
-            margin: 5% .5% 0 .5%;
-            width: 24%;
-            height: 12rem;
-            img {
-                max-width: 125%;
-                max-height: 8rem;
-            }
-        }
-    
-    }
-
-}
-
 
 #contactUsWrap {
     width: 100%;
@@ -566,7 +462,6 @@ main {
         }
     }
 }
-
 
 
 

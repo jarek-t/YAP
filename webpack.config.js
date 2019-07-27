@@ -7,13 +7,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: { main: './src/index.js', assets: './src/assets.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
   },
-  target: "node",
-  externals: [nodeExternals()],
+  // target: "node",
+  // externals: [nodeExternals()],
   module: {
     rules: [
         {
@@ -55,5 +55,14 @@ module.exports = {
       filename: 'index.html'
     }),
     new WebpackMd5Hash()
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
+    host: '0.0.0.0'
+  },
+  watchOptions: {
+    aggregateTimeout: 600
+  }
 };
