@@ -27,6 +27,11 @@ class mapCoordinator {
         }
         this.mapNav = new mapNav(mapNavOpts)
 
+        let map = this.map.obj
+        this.map.obj.on('click', e=> {
+            console.log(map.getZoom())
+            console.log(map.getCenter())
+        })
         this.toggle()
     }
 

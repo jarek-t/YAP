@@ -3,7 +3,7 @@ const L = require('leaflet')
 module.exports = containerName => {
     let map = L.map(
         containerName, {
-        center: [43.761,-89.956],
+        center: [44.218374327479964,-86.06911898411354],
         zoom: 7
         // minZoom: ,
         // maxZoom: ,
