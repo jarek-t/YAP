@@ -26,7 +26,7 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
 
-        a {
+        div {
             margin: 5% 2.5% 0 2.5%;
             width: 20%;
             height: 11.5rem;
@@ -61,7 +61,7 @@ body {
             }
         }
         
-        a:hover {
+        div:hover {
             button {
                 background-color: $primPink;
                 color: #1E1E1E;
