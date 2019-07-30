@@ -9,9 +9,7 @@
 
 .esri-ui { display: none !important;}
 
-body {
-    @extend .default;
-}
+body { @extend .default; }
 
 #pickYouPassionWrap {
     background-color: white;
@@ -84,8 +82,9 @@ body {
         width: 100%;
         height: 75vh;
 
+        transition: height .75s;
+
         //Map Nav styling in ./mapNav.scss
-        
         #mapWrap {
             position: absolute;
 
@@ -101,7 +100,7 @@ body {
 
     .border {
         width: 100%;
-        height: 2.5% !important;
+        height: 3.5% !important;
         background-color: white;
         z-index: 1001;
 
@@ -110,9 +109,39 @@ body {
     }
 
     #topPassionBorder { top: 0; left: 0;}
-    #bottomPassionBorder { top: 97.5%; left: 0;}
+    
+    #bottomPassionBorder { 
+        top: 96.5%; 
+        left: 0;
+        position: relative; 
+        
+        aside {
+            @extend .mainFont;
+            user-select: none;
 
+            position: absolute;
+            right: 0;
+            height: 100%;
+            
+            color: black;
+            padding: 1px 0 1px 0;
 
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+
+            a {
+                margin-left: .25rem;
+                color: $primPink;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.onMap {
+    height: calc(100vh-3.25rem) !important;
 }
 
 // #contentWrap {

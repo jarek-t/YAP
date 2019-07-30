@@ -1,19 +1,15 @@
 const L = require('leaflet')
 
-module.exports = containerName => {
+module.exports = args => { //containerName => {
     let map = L.map(
-        containerName, {
+        args['containerID'], {
         center: [44.218374327479964,-86.06911898411354],
         zoom: 7
-        // minZoom: ,
-        // maxZoom: ,
+        // attr: 
     })
     
-    L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png', {
-	    attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-	    minZoom: 1,
-	    maxZoom: 19
-    }).addTo(map)
+    L.tileLayer(args['layerSrc'], args['layerArgs']).addTo(map)
 
+    map.attr = args['layerArgs']['attribution']
     return map
 }
