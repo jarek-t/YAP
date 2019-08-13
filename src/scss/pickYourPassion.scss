@@ -114,27 +114,32 @@ body { @extend .default; }
         top: 96.5%; 
         left: 0;
         position: relative; 
+
         
         aside {
+            float: right;
+
             @extend .mainFont;
             user-select: none;
-
-            position: absolute;
-            right: 0;
-            height: 100%;
             
             color: black;
-            padding: 1px 0 1px 0;
+            margin-right: .5rem;
+            height: 100%;
 
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
-            align-content: center;
+            
 
-            a {
-                margin-left: .25rem;
-                color: $primPink;
-                text-decoration: none;
+            p {
+                margin: 0;
+                padding: 0;
+                
+                a {
+                    margin-left: .25rem;
+                    color: $primPink;
+                    text-decoration: none;
+                }
             }
         }
     }

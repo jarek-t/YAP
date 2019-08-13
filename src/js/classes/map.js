@@ -31,7 +31,7 @@ class mapCoordinator {
         this.map.container.removeChild(this.map.container.lastChild)
         let attr = document.createElement('aside')
 
-        attr.innerHTML = 'Basemaps provided by' + this.map.obj.attr
+        attr.innerHTML = '<p>Basemaps provided by' + this.map.obj.attr + '</p>'
         attr.lastChild.target = '_blank'
         attr.id = "BasemapAttribution"
         this.map.container.lastChild.appendChild(attr)
