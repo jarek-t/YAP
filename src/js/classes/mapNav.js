@@ -22,6 +22,7 @@ class mapNav {
         this.mapNavContainer.appendChild(mapNav.wrap)
 
         this.currentlySelected = false
+        this.currentPId = false
         
         this.defautlHeader = 'Pick Your Passion'
         this.headerObj = document.getElementById('mapNavHeader')
@@ -32,17 +33,23 @@ class mapNav {
     back() {
         let deselect = this.deselect()   
 
-        if (deselect) this.mapMetaNavItems.head.innerHTML = 'Pick Your Passion'
-            
+        if (deselect) 
+            this.mapMetaNavItems.head.innerHTML = 'Pick Your Passion'
         
-        else this.map.toggle()
-        
+        else this.map.toggle()   
+    }
+
+    selectOrg(id) {
+        this.map.selectOrg(id)
     }
 
     makeActive(pId) {
         this.deselect()
 
+        this.currentPId = pId
         this.currentlySelected = this.mapNavItems[pId]
+
+        this.map.makeActive(pId)
         
         this.mapMetaNavItems.active.appendChild(this.currentlySelected.orgs)
 
