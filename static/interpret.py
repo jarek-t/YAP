@@ -92,7 +92,7 @@ class YapDataReadier:
                 "name": row[0],
                 "link": row[4],
                 "phone": row[3],
-                "coords": {"lat": coords[0], "lon": coords[1]}
+                "coords": [coords[0], coords[1]]
             }
             self.splitAddress(row[2], attrs)
 
