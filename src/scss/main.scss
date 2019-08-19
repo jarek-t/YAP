@@ -153,7 +153,6 @@ main {
             color: #1e1e1e;
         }
     }
-
 }
 
 //Styles for opened Pick Your Passion Portal
@@ -335,63 +334,52 @@ main {
 #readMoreAd { width: 11rem; }
 
 #directorsWrap {
-
     @extend .default;
+    height: 50vh;
+    
+    padding: 2rem 0;
     z-index: 2;
-    width: 100%;
-    padding: 1rem 0 0 0;
-    padding: 0 0 3rem 0;
-    margin-top: 0;
     background-color: white;
 
-
-    box-shadow: 0 .5rem .5rem .5rem rgba($color: $primPink, $alpha: 0.25);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
     #directors {
+        @extend .default;
+        max-width: 1280px;
+
         display: flex;
         justify-content: space-around;
-        // flex-wrap: wrap;
+        flex-direction: row;
 
-        box-sizing: border-box; 
-        max-width: 1280px; 
-        margin: auto;
-
+        li:nth-child(2) { margin: 0 2rem; }
+        
         li {
-            text-align: center;
-
-            width: 33%;
-            box-sizing: border-box;
-            margin: 0 1.5% 0 1.5%;
-            padding: 0 1.5% 0 1.5%;
+            @extend .mainFont;
+            max-height: 100%;
+            flex: 3;
 
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-end;
 
-            max-height: 80vh;
+            img { margin: auto 0; }
 
-            .imgWrap {
-                height: 40vh;
+            .txtWrap {
+                @extend .default;
+
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: space-between;
+                align-content: center;
                 
-                img {
-                    max-height: 40vh;
-                    margin: auto;
-                }
-            }
-            
-            
-            .txtWrap {
-                @extend .mainFont;
-                p {
-                    text-align: left;
+                * {
+                    margin: 1rem auto;
+                    text-align: center;
                 }
             }
         }
-
-
     }
 
     article { display: none; }
