@@ -8,9 +8,9 @@
 
     width: 40%;
     max-width: 400px;
-    height: 94%;
+    height: 97%;
 
-    top: 3.5%;
+    top: 1.5%;
 
     display: flex;
     align-items: stretch;
@@ -129,10 +129,10 @@
 
         flex: 1;
         overflow: auto;
-        margin-top: 1rem;
+        // margin-top: 1rem;
         #mapNavList {
             @extend .default;
-
+            padding-top: 1rem;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
