@@ -1,0 +1,60 @@
+form {
+    @extend .default;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    input, textarea, button {
+        @extend .mainFont;
+        font-size: 1rem;
+        outline: none;
+        border: solid #1E1E1E .1rem;
+        background: none;
+        border-radius: .65rem;
+        padding: .25rem .5rem;
+        margin: .5rem 0;
+        color: black;
+    }
+    input {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 45%;        
+    }
+
+    textarea {
+        width: 100%;
+        resize: none;
+        height: 7.5rem;
+    }
+
+    label { display: none; }
+    
+    input:focus, textarea:focus 
+        { border-color: $primPink; }
+
+    button {
+        @extend .mainCapsFont;
+        margin: 0;
+        padding: .75rem;
+        height: auto;
+
+        // font-weight: 200;
+        h1 {
+            font-weight: 200;
+        }
+        // border: none;
+        // color: white;
+        // background-color: #1E1E1E;
+
+
+        // transition: all .5s;
+    }
+
+    // button:hover {
+    //     background-color: #dfc4ce;
+    //     color: #1E1E1E;
+
+    // }
+}

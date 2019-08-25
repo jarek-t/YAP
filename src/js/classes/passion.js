@@ -5,7 +5,7 @@ class passion {
         this.icon = L.icon({
             iconUrl: '/assets/mapPin.svg',
 
-            iconSize: [40, 60]
+            iconSize: [30, 45]
         })
         this.marker = L.marker(this.attrs.coords, {icon: this.icon})
 
