@@ -33,7 +33,7 @@
             @extend .default;
             a {
                 text-decoration: none;
-                color: black;
+                color: $offBlack;
                 @extend .mainCapsFont;
 
                 // h3 {@extend .mainCapsFont; }

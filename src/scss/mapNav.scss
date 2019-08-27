@@ -98,7 +98,7 @@
                     align-content: center;
         
                     *{
-                        color: black;
+                        color: $offBlack;
 
                         height: auto;
                         width: auto;
@@ -172,7 +172,7 @@
                     margin: 0 auto 0 auto;
                     padding: .5rem .65rem .65rem .35rem;
 
-                    color: black;
+                    color: $offBlack;
                 }
             }
 

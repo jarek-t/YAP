@@ -19,56 +19,45 @@ body { @extend .default; }
     justify-content: flex-start;
     align-content: center;
 
-    
-
     #pickYourPassionNav {
-        max-width: 1150px;
+        margin: auto;
+        padding: 0 0 2rem 0;
         box-sizing: border-box;
+        max-width: 1150px;
         width: 100%;
         
-        padding: 0 0 2rem 0;
-        margin: auto;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         
         aside {
             @extend .mainCapsFont;
-            width: 100%;
-            text-transform: uppercase;
             font-weight: 700;
             font-size: 2rem; 
+            
+            text-transform: uppercase;
+            text-align: center;
+
+            width: 100%;
             margin: auto;
             padding: 1.5rem 0;
-
-            text-align: center;
-    
         }
 
         div {
-            box-sizing: border-box;
-            width: 20%;
-            
-            margin: 2.5% 2.5%;
-    
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-decoration: none;
             cursor: pointer;
 
-            
-            :hover {
-                button {
-                    background-color: $primPink;
-                }
-            }
-    
+            box-sizing: border-box;
+            margin: 2.5% 2.5%;
+            width: 20%;
+                
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-decoration: none;
+
             img {
                 max-width: 100%;
-                width: auto;
-                height: auto;
-                max-height: 7rem;
+                height: 7.5rem;
             }
             
             button {
@@ -136,7 +125,7 @@ body { @extend .default; }
             @extend .mainFont;
             user-select: none;
             
-            color: black;
+            color: $offBlack;
             margin-right: .5rem;
             height: 100%;
 
