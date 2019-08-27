@@ -110,7 +110,7 @@ main {
             letter-spacing: -.1rem;
             
             text-transform: uppercase;
-            color: #1E1E1E;
+            color: $offBlack;
             text-align: left;
         }
     }
@@ -223,11 +223,7 @@ main {
                 text-transform: none;
             }
 
-            button {
-                margin: 0 auto;
-
-                i { margin-left: .5rem; }
-            }
+            
         }
     }
 
